@@ -46,11 +46,15 @@ namespace OOP_laba3
         }
 
         private void btnCreateObject_Click(object sender, EventArgs e)
-        {
+        { 
             var transport =
                 (Transport) Activator.CreateInstance(dictionaryObjects[comboBoxObjects.SelectedItem.ToString()]);
             transports.Add(transport);
-            comboBoxTransports.Items.Add(transport);
+            comboBoxTransports.Items.Clear();
+            foreach (Transport transp in transports)
+            {
+                comboBoxTransports.Items.Add(transp.Name);
+            }
         }
 
         private void comboBoxTransports_SelectedIndexChanged(object sender, EventArgs e)
