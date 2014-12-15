@@ -4,15 +4,17 @@ using System.Collections.Generic;
 namespace OOP_Laba3
 {
     [Serializable]
-    public class GroundTransport : Transport
+    public class Plane : Airplane
     {
-        public GroundTransport()
+        public Plane()
         {
             Motor = new List<Motor>();
-            DiameterWheel = 18;
+            Celling = 2000;
+            FlightRange = 3500;
         }
 
         public List<Motor> Motor { get; set; }
-        public int DiameterWheel { get; set; }
+        public int Celling { get; set; }
+        public int FlightRange { get; set; }
     }
 }
